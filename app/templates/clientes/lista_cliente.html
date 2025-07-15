@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Clientes</h2>
+<a href="/clientes/create" class="btn btn-success mb-3">Agregar Cliente</a>
+<table class="table table-striped">
+<tr><th>Nombre</th><th>Documento</th><th>Tipo</th><th>Es Agencia</th><th>Acciones</th></tr>
+{% for c in clientes %}
+<tr>
+<td>{{ c.nombre }}</td>
+<td>{{ c.documento }}</td>
+<td>{{ c.tipo_cliente }}</td>
+<td>{{ "Sí" if c.es_agencia else "No" }}</td>
+<td>
+  <a href="/clientes/edit/{{ c.id }}" class="btn btn-warning btn-sm">Editar</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

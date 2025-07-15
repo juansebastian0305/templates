@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Nueva Reserva</h2>
+<form method="post">
+  <div class="mb-3">
+    <label>Cliente</label>
+    <select name="cliente_id" class="form-control">
+      {% for c in clientes %}
+        <option value="{{ c.id }}">{{ c.nombre }} ({{ c.tipo_cliente }})</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label>Habitación</label>
+    <select name="habitacion_id" class="form-control">
+      {% for h in habitaciones %}
+        <option value="{{ h.id }}">N° {{ h.numero }} - {{ h.estado }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label>Motivo</label>
+    <input type="text" name="motivo" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Fecha Inicio</label>
+    <input type="date" name="fecha_inicio" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Fecha Fin</label>
+    <input type="date" name="fecha_fin" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label>Precio</label>
+    <input type="number" name="precio" step="0.01" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

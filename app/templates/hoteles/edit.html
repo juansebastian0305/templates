@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Editar Hotel</h2>
+<form method='post'>
+  <div class='mb-3'>
+    <label>Nombre</label>
+    <input type='text' class='form-control' name='nombre' value='{{ hotel.nombre }}'>
+  </div>
+  <div class='mb-3'>
+    <label>Dirección</label>
+    <input type='text' class='form-control' name='direccion' value='{{ hotel.direccion }}'>
+  </div>
+  <div class='mb-3'>
+    <label>Teléfono</label>
+    <input type='text' class='form-control' name='telefono' value='{{ hotel.telefono }}'>
+  </div>
+  <div class='mb-3'>
+    <label>Categoría</label>
+    <input type='text' class='form-control' name='categoria' value='{{ hotel.categoria }}'>
+  </div>
+  <button type='submit' class='btn btn-primary'>Actualizar</button>
+</form>
+{% endblock %}

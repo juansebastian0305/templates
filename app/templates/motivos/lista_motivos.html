@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Motivos de Viaje</h2>
+<a href="/motivos/create" class="btn btn-success mb-3">Agregar Motivo</a>
+<table class="table table-bordered">
+<tr><th>ID</th><th>Motivo</th><th>Acciones</th></tr>
+{% for m in motivos %}
+<tr>
+<td>{{ m.id }}</td>
+<td>{{ m.nombre }}</td>
+<td>
+  <a href="/motivos/edit/{{ m.id }}" class="btn btn-warning btn-sm">Editar</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

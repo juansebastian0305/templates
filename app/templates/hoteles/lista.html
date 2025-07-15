@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Hoteles</h2>
+<a href='/hoteles/create' class='btn btn-success mb-3'>Agregar Hotel</a>
+<table class='table table-striped'>
+<tr><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Categoría</th><th>Acciones</th></tr>
+{% for h in hoteles %}
+<tr>
+<td>{{ h.nombre }}</td><td>{{ h.direccion }}</td><td>{{ h.telefono }}</td><td>{{ h.categoria }}</td>
+<td>
+  <a href='/hoteles/edit/{{ h.id }}' class='btn btn-warning btn-sm'>Editar</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+
+<h2>Facturación</h2>
+<table class="table table-bordered">
+<tr>
+  <th>Cliente</th><th>Subtotal</th><th>IVA</th><th>Total</th>
+</tr>
+{% for f in facturas %}
+<tr>
+  <td>{{ f.cliente }}</td>
+  <td>${{ "%.2f"|format(f.precio) }}</td>
+  <td>${{ "%.2f"|format(f.iva) }}</td>
+  <td><strong>${{ "%.2f"|format(f.total) }}</strong></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

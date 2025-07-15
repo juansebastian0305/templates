@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Categorías de Hotel</h2>
+<a href='/categorias/create' class='btn btn-success mb-3'>Agregar Categoría</a>
+<table class='table table-bordered'>
+<tr><th>ID</th><th>Nombre</th><th>Acciones</th></tr>
+{% for c in categorias %}
+<tr>
+<td>{{ c.id }}</td>
+<td>{{ c.nombre }}</td>
+<td>
+  <a href='/categorias/edit/{{ c.id }}' class='btn btn-warning btn-sm'>Editar</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

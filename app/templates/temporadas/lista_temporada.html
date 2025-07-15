@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Temporadas</h2>
+<a href="/temporadas/create" class="btn btn-success mb-3">Agregar Temporada</a>
+<table class="table table-bordered">
+<tr><th>Nombre</th><th>Inicio</th><th>Fin</th><th>Acciones</th></tr>
+{% for t in temporadas %}
+<tr>
+<td>{{ t.nombre }}</td>
+<td>{{ t.fecha_inicio }}</td>
+<td>{{ t.fecha_fin }}</td>
+<td>
+  <a href="/temporadas/edit/{{ t.id }}" class="btn btn-warning btn-sm">Editar</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+

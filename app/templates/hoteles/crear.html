@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Nuevo Hotel</h2>
+<form method='post'>
+  <div class='mb-3'>
+    <label>Nombre</label>
+    <input type='text' class='form-control' name='nombre'>
+  </div>
+  <div class='mb-3'>
+    <label>Dirección</label>
+    <input type='text' class='form-control' name='direccion'>
+  </div>
+  <div class='mb-3'>
+    <label>Teléfono</label>
+    <input type='text' class='form-control' name='telefono'>
+  </div>
+  <div class='mb-3'>
+    <label>Categoría</label>
+    <input type='text' class='form-control' name='categoria'>
+  </div>
+  <button type='submit' class='btn btn-primary'>Guardar</button>
+</form>
+{% endblock %}

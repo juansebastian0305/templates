@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Editar Cliente</h2>
+<form method="post">
+  <div class="mb-3">
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="form-control" value="{{ cliente.nombre }}">
+  </div>
+  <div class="mb-3">
+    <label>Documento</label>
+    <input type="text" name="documento" class="form-control" value="{{ cliente.documento }}">
+  </div>
+  <div class="mb-3">
+    <label>Tipo de Cliente</label>
+    <select name="tipo_cliente" class="form-control">
+      <option value="nacional" {% if cliente.tipo_cliente == 'nacional' %}selected{% endif %}>Nacional</option>
+      <option value="extranjero" {% if cliente.tipo_cliente == 'extranjero' %}selected{% endif %}>Extranjero</option>
+    </select>
+  </div>
+  <div class="form-check mb-3">
+    <input type="checkbox" name="es_agencia" class="form-check-input" id="agencia" {% if cliente.es_agencia %}checked{% endif %}>
+    <label for="agencia" class="form-check-label">¿Es una agencia de viajes?</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

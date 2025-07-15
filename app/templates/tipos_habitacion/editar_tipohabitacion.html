@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Editar Tipo de Habitación</h2>
+<form method="post">
+  <div class="mb-3">
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="form-control" value="{{ tipo.nombre }}">
+  </div>
+  <div class="mb-3">
+    <label>Descripción</label>
+    <textarea name="descripcion" class="form-control">{{ tipo.descripcion }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

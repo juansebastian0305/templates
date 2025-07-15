@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Habitaciones</h2>
+<a href='/habitaciones/create' class='btn btn-success mb-3'>Agregar Habitación</a>
+<table class='table table-bordered'>
+<tr><th>Número</th><th>Piso</th><th>Tipo</th><th>Estado</th><th>Hotel</th><th>Acciones</th></tr>
+{% for h in habitaciones %}
+<tr>
+<td>{{ h.numero }}</td>
+<td>{{ h.piso }}</td>
+<td>{{ h.tipo }}</td>
+<td>{{ h.estado }}</td>
+<td>
+  {% for hotel in hoteles if hotel.id == h.hotel_id|int %}
+    {{ hotel.nombre }}
+  {% endfor %}
+</td>
+<td><a href='/habitaciones/edit/{{ h.id }}' class='btn btn-warning btn-sm'>Editar</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

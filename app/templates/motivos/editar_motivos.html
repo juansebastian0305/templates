@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Editar Motivo de Viaje</h2>
+<form method="post">
+  <div class="mb-3">
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="form-control" value="{{ motivo.nombre }}">
+  </div>
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

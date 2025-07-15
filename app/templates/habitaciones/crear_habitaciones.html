@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Nueva Habitación</h2>
+<form method='post'>
+  <div class='mb-3'>
+    <label>Número</label>
+    <input type='text' class='form-control' name='numero'>
+  </div>
+  <div class='mb-3'>
+    <label>Piso</label>
+    <input type='text' class='form-control' name='piso'>
+  </div>
+  <div class='mb-3'>
+    <label>Tipo</label>
+    <input type='text' class='form-control' name='tipo'>
+  </div>
+  <div class='mb-3'>
+    <label>Estado</label>
+    <select class='form-control' name='estado'>
+      <option value='disponible'>Disponible</option>
+      <option value='ocupada'>Ocupada</option>
+    </select>
+  </div>
+  <div class='mb-3'>
+    <label>Hotel</label>
+    <select class='form-control' name='hotel_id'>
+      {% for hotel in hoteles %}
+        <option value='{{ hotel.id }}'>{{ hotel.nombre }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type='submit' class='btn btn-primary'>Guardar</button>
+</form>
+{% endblock %}

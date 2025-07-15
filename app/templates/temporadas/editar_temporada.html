@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Editar Temporada</h2>
+<form method="post">
+  <div class="mb-3">
+    <label>Nombre</label>
+    <select name="nombre" class="form-control">
+      <option value="alta" {% if temporada.nombre == 'alta' %}selected{% endif %}>Alta</option>
+      <option value="media" {% if temporada.nombre == 'media' %}selected{% endif %}>Media</option>
+      <option value="baja" {% if temporada.nombre == 'baja' %}selected{% endif %}>Baja</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label>Fecha Inicio</label>
+    <input type="date" name="fecha_inicio" class="form-control" value="{{ temporada.fecha_inicio }}">
+  </div>
+  <div class="mb-3">
+    <label>Fecha Fin</label>
+    <input type="date" name="fecha_fin" class="form-control" value="{{ temporada.fecha_fin }}">
+  </div>
+  <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

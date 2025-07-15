@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/app/static/style.css">
+<h2>Reservas</h2>
+<a href="/reservas/create" class="btn btn-success mb-3">Nueva Reserva</a>
+<table class="table table-bordered">
+<tr><th>Cliente</th><th>Habitación</th><th>Motivo</th><th>Fechas</th><th>Precio</th><th>IVA</th><th>Acciones</th></tr>
+{% for r in reservas %}
+<tr>
+<td>{{ clientes | selectattr("id", "equalto", r.cliente_id) | map(attribute="nombre") | first }}</td>
+<td>{{ habitaciones | selectattr("id", "equalto", r.habitacion_id) | map(attribute="numero") | first }}</td>
+<td>{{ r.motivo }}</td>
+<td>{{ r.fecha_inicio }} - {{ r.fecha_fin }}</td>
+<td>${{ "%.2f"|format(r.precio) }}</td>
+<td>{% if r.aplica_iva %}Sí{% else %}No{% endif %}</td>
+<td><a href="/reservas/edit/{{ r.id }}" class="btn btn-warning btn-sm">Editar</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
